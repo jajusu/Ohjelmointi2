@@ -86,4 +86,39 @@ public class Dao {
 		}		
 		return autot;
 	}
+	
+	public boolean lisaaAuto(Auto auto){
+		boolean paluuArvo=true;
+		sql="INSERT INTO autot VALUES(?,?,?,?)";						  
+		try {
+			con = yhdista();
+			stmtPrep=con.prepareStatement(sql); 
+			stmtPrep.setString(1, auto.getRekno());
+			stmtPrep.setString(2, auto.getMerkki());
+			stmtPrep.setString(3, auto.getMalli());
+			stmtPrep.setInt(4, auto.getVuosi());
+			stmtPrep.executeUpdate();
+	        con.close();
+		} catch (Exception e) {				
+			e.printStackTrace();
+			paluuArvo=false;
+		}				
+		return paluuArvo;
+	}
+	
+	public boolean poistaAuto(String rekNo){ //Oikeassa el‰m‰ss‰ tiedot ensisijaisesti merkit‰‰n poistetuksi.
+		boolean paluuArvo=true;
+		sql="DELETE FROM autot WHERE rekNo=?";						  
+		try {
+			con = yhdista();
+			stmtPrep=con.prepareStatement(sql); 
+			stmtPrep.setString(1, rekNo);			
+			stmtPrep.executeUpdate();
+	        con.close();
+		} catch (Exception e) {				
+			e.printStackTrace();
+			paluuArvo=false;
+		}				
+		return paluuArvo;
+	}	
 }
