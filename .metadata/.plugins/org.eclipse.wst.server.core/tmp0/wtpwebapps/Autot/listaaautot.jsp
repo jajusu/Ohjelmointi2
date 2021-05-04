@@ -5,7 +5,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="stylesheet" type="text/css" href="css/tyylit.css">
 <title>Insert title here</title>
 <style>
 .oikealle{
@@ -64,7 +64,8 @@ function haeAutot(){
         	htmlStr+="<td>"+field.merkki+"</td>";
         	htmlStr+="<td>"+field.malli+"</td>";
         	htmlStr+="<td>"+field.vuosi+"</td>";  
-        	htmlStr+="<td><span class='poista' onclick=poista('"+field.rekno+"')>Poista</span></td>";
+        	htmlStr+="<td><a href='muutaauto.jsp?rekno="+field.rekno+"'>Muuta</a>&nbsp;"; 
+        	htmlStr+="<span class='poista' onclick=poista('"+field.rekno+"')>Poista</span></td>";
         	htmlStr+="</tr>";
         	$("#listaus tbody").append(htmlStr);
         });	

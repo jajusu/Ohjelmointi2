@@ -4,7 +4,6 @@ INDEX VERSION 1.131+C:\Users\Jarkko\Ohjelmointi 2\.metadata\.plugins\org.eclipse
 3634656345.index
 1651794914.index
 4088832729.index
-376061957.index
 1807717879.index
 61734926.index
 3865381532.index

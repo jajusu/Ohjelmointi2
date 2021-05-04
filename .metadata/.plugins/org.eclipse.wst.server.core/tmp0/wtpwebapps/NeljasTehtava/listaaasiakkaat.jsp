@@ -21,13 +21,15 @@
 			<th colspan="2"><input type="text" id="hakusana"></th>
 			<th><input type="button" value="Hae" id="hakunappi"></th>
 			<th></th>
+			<th></th>
 		</tr>			
 		<tr>
 			<th>Etunimi</th>
 			<th>Sukunimi</th>
 			<th>Puhelin</th>
 			<th>Sähköposti</th>		
-			<th></th>					
+			<th></th>
+			<th></th>				
 		</tr>
 	</thead>
 	<tbody>
@@ -62,6 +64,7 @@ function haeAsiakkaat(){
         	htmlStr+="<td>"+field.sukunimi+"</td>";
         	htmlStr+="<td>"+field.puhelin+"</td>";
         	htmlStr+="<td>"+field.sposti+"</td>";
+        	htmlStr+="<td><a href='muokkaaasiakas.jsp?asiakas_id="+field.asiakas_id+"'>Muuta</a></td>"; 
         	htmlStr+="<td><span class='poista' onclick=poista('"+field.asiakas_id+"')>Poista</span></td>";
         	console.log(field.asiakas_id)
         	htmlStr+="</tr>";
